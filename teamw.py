@@ -18,3 +18,17 @@ itemArray[400] = "coins"
 itemArray[602] = "Keycard"
 itemArray[403] = "Syringe"
 itemArray[603] = "Battery"
+
+def move(userInput, location):
+  if str(userInput) == "n" and doesRoomExist(location - 1):
+    location = location - 1
+  else:
+    if str(userInput) == "s" and doesRoomExist(location + 1):
+      location = loaction + 1
+    else:
+      if str(userInput) == "e" and doesRoomExist(location + 100):
+        location = location + 100
+      else:
+        if str(userInput) == "w" and doesRoomExist(location - 100):
+          location = location -100
+  return location 
