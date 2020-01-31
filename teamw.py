@@ -1,5 +1,6 @@
 roomArray = []
 itemArray = []
+import time
 for i in range(999):
   roomArray.append(False)
   itemArray.append(False)
@@ -24,6 +25,18 @@ itemArray[400] = "coins"
 itemArray[602] = "Keycard"
 itemArray[403] = "Syringe"
 itemArray[603] = "Battery"
+
+def main():
+    location = 0
+    print("Hospital Escape")
+    print("by: Christian, Megan, Abood")
+    time.sleep(1)
+    while True:
+        print(roomArray[location])
+        print("please type: n, s, e, w, or quit")
+        userinput = input()
+        move(userinput, location)
+        location = move()
 
 def move(userInput, location):
   if str(userInput) == "n" and doesRoomExist(location - 1):
