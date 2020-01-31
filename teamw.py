@@ -32,3 +32,15 @@ def move(userInput, location):
         if str(userInput) == "w" and doesRoomExist(location - 100):
           location = location -100
   return location 
+
+def doesRoomExist(roomNumber):
+    try:
+        if RoomArray[roomNumber] == False:
+            print ("You can't go there")
+            return False
+        else: 
+            return True
+    except:
+        print ("You can't go there")
+        return False
+    
