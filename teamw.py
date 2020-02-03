@@ -26,19 +26,7 @@ itemArray[602] = "Keycard"
 itemArray[403] = "Syringe"
 itemArray[603] = "Battery"
 
-def main():
-    location = 0
-    print("Hospital Escape")
-    print("by: Christian, Megan, Abood")
-    time.sleep(1)
-    while True:
-        print(roomArray[location])
-        print("please type: n, s, e, w, or quit")
-        userinput = input()
-        move(userinput, location)
-        location = move()
-        if item[location]:
-            print("there is an item here:" + item[location])
+
 
 def move(userInput, location):
   if str(userInput) == "n" and doesRoomExist(location - 1):
@@ -57,7 +45,7 @@ def move(userInput, location):
 
 def doesRoomExist(roomNumber):
     try:
-        if RoomArray[roomNumber] == False:
+        if roomArray[roomNumber] == False:
             print ("You can't go there")
             return False
         else: 
@@ -66,4 +54,16 @@ def doesRoomExist(roomNumber):
         print ("You can't go there")
         return False
     
-
+def main():
+    location = 200
+    print("Hospital Escape")
+    print("by: Christian, Megan, Abood")
+    print("You have just gotton in a car crash and when you wake up in the hospital, but there is no elese there.")
+    time.sleep(1)
+    while True:
+        print(roomArray[location])
+        print("please type: n, s, e, w, or quit")
+        userinput = input()
+        location =  move(userinput, location)
+        if itemArray[location]:
+            print("there is an item here:" + itemArray[location])
