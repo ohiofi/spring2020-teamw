@@ -37,6 +37,8 @@ def main():
         userinput = input()
         move(userinput, location)
         location = move()
+        if item[location]:
+            print("there is an item here:" + item[location])
 
 def move(userInput, location):
   if str(userInput) == "n" and doesRoomExist(location - 1):
