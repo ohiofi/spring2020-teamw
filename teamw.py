@@ -57,7 +57,7 @@ def doesRoomExist(roomNumber):
 def pickUpItem(location):
   print("would you like to pick it up? type y or n")
   userinput = input()
-  if userinput == userinput.lower():
+  if userinput.lower() == "y":
     itemArray[location] = False
     yourItems.append(itemArray[location])
     print("Item Has been picked up")
