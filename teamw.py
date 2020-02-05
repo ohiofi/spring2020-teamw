@@ -18,6 +18,7 @@ roomArray[503] = "you are in the southern most part of the lobby. you can move w
 roomArray[601] = "you are in the corner of the room. you can move west, or south"
 roomArray[602] = "you are at the main desk. you can move north, west, and south"
 roomArray[603] = "you are in the southeast corner. you can move west or north"
+roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
 
 itemArray[201] = "Pill bottle"
 itemArray[300] = "Phone"
@@ -81,3 +82,17 @@ def main():
         if itemArray[location] != False:
             print("there is an item here:" + itemArray[location])
             pickUpItem()
+   
+def hack():
+    compcode = "raddoc2020"
+    print("find the computer password")
+    print("rldk-akjg-dnjj")
+    print("dmf-ocn-cmf")
+    print("245-014-249-034")
+    print("Input Password")
+    pas = input()
+    while pas != compcode:
+        print("try again")
+    else:
+        print("Correct")
+            
