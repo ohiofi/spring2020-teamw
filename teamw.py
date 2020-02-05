@@ -67,3 +67,74 @@ def main():
         location =  move(userinput, location)
         if itemArray[location]:
             print("there is an item here:" + itemArray[location])
+            
+def randomHealth(): #bossbattle
+    return randint(30,50)
+
+def randomTrueFalse():
+    truefalse = randint(1,2)
+    if truefalse == 1:
+        return True
+    else:
+        return False
+
+def diceRoll(): #bossbattle
+    return randint(1,6)
+
+def hitBoss(weapon, iceWeakness, magicWeakness): #bossbattle
+    damage = 0
+    weapon = weapon.lower()
+    if "sword" in weapon or "spell" in weapon:
+        damage = damage + diceRoll()
+    if iceWeakness == True and "ice" in weapon:
+        damage = damage + diceRoll()
+    if iceWeakness == False and "fire" in weapon:
+        damage = damage + diceRoll()
+    if magicWeakness == True and "spell" in weapon:
+        damage = damage + diceRoll()
+    if magicWeakness == False and "sword" in weapon:
+        damage = damage + diceRoll()
+    print("you have done " + str(damage) + " to boss")
+    return damage
+
+def hitPlayer(playerHealth): #bossbattle
+    EnemyAttacks = ["blades of Blood", "Wind Scarf", "Adamant Barrage", "Telsa attack", "Iron Reaver", "Blacklast Wave", "Revenge Laser"]
+    print ("The dragon uses " + choice(EnemyAttacks))
+    damage = 0
+    damage = damage + diceRoll()
+    if playerHealth > 25:
+        damage = damage + diceRoll()
+    print("the boss did " + str(damage) + " to YOU!")
+    return damage
+
+def whoWins(playerHealth, bossHealth): #bossbattle
+    if playerHealth <= 0:
+        print ("You have been defeated")
+    else:
+        print("you have defeated the dragon")
+
+def bossBattle(): #bossbattle
+  playerHealth = 50
+  print("there is a dragon you must defeat in order to pass")
+  bossHealth = randomHealth()
+  iceWeakness = randomTrueFalse()
+  magicWeakness = randomTrueFalse()
+  while playerHealth > 0 and bossHealth > 0:
+    print("The dragon has " + str(bossHealth) + " health")
+    time.sleep(1)
+    print("What do you want to use?")
+    print("Ice Spell")
+    print("Fire Spell")
+    print("Ice Sword")
+    print("Fire Sword")
+    weapon = input()
+    time.sleep(1)
+    damage = hitBoss(weapon, iceWeakness, magicWeakness)
+    bossHealth = bossHealth - damage
+    if bossHealth > 0:
+      damage = hitPlayer(playerHealth)
+      playerHealth = playerHealth - damage
+      time.sleep(1)
+      print("You have " + str(playerHealth) + " remaining")
+      time.sleep(1)
+  whoWins(playerHealth, bossHealth)
