@@ -23,6 +23,7 @@ def highLow():
         print("The secret word is before " + str(guess)) 
     if guess == theWord:
         print("You got it!!!!!")
+        print("there are walls to the north and west of you. To the south there is a long hallway and to the east ther is some medical supplies")
         return
 
 roomArray[200] = "You are in the corner of a room with walls to the north and west of you. Further east in room is a chair, and to the south west there is a tiny window"
@@ -39,7 +40,7 @@ roomArray[601] = "you are in the corner of the room. you can move west, or south
 roomArray[602] = "you are at the main desk. you can move north, west, and south"
 roomArray[603] = "you are in the southeast corner. you can move west or north"
 roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
-roomArray[203] = highLow() 
+roomArray[203] = "time to play a game" + highLow() 
 roomArray[303] = "Your in anemptry room with walls north and south of you"
 roomArray[204] = "You are in an empty hallway. You may only move north and south."
 roomArray[205]= "You are in an empty hallway. There is a blood blank east of you. You may not move west."
