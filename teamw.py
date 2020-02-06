@@ -4,6 +4,26 @@ import time
 for i in range(999):
   roomArray.append(False)
   itemArray.append(False)
+  
+def highLow():
+  color = ["blue", "green", "purple", "Teal", "yellow", "red", "gray", "black"]
+  veggies = ["cabage","garlic", "cucumber", "patato", "lettuce", "avacodo", "leek", "carrot", "taro", "ginger"]
+  desserts = ["fudge", "cake", "cupcake", "pastery", "danish", "sundae", "cookie", "tart", "chocolate", "brownie"]
+  combinedList = color + veggies + desserts
+  theWord = combinedList 
+  theWord = theWord.lower()
+  print("I'm thinking of a secret word. Take a guess and I'll tell you if the secret word is before your word or after your word.")
+  while True:
+    print("guess a word")
+    guess = input()
+    guess = guess.lower()
+    if guess < theWord:
+        print("The secret word is after " + str(guess))
+    if guess > theWord:
+        print("The secret word is before " + str(guess)) 
+    if guess == theWord:
+        print("You got it!!!!!")
+        return
 
 roomArray[200] = "You are in the corner of a room with walls to the north and west of you. Further east in room is a chair, and to the south west there is a tiny window"
 roomArray[400] = "you are near a chair and the walls of the room are to the north and east of you. You can see a tiny window to the south west and a door to the far south"
@@ -19,6 +39,7 @@ roomArray[601] = "you are in the corner of the room. you can move west, or south
 roomArray[602] = "you are at the main desk. you can move north, west, and south"
 roomArray[603] = "you are in the southeast corner. you can move west or north"
 roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
+roomArray[203] = highLow() 
 
 itemArray[201] = "Pill bottle"
 itemArray[300] = "Phone"
@@ -66,7 +87,18 @@ def pickUpItem(location):
   else:
     return
 
-  
+def hack():
+    compcode = "raddoc2020"
+    print("find the computer password")
+    print("rldk-akjg-dnjj")
+    print("dmf-ocn-cmf")
+    print("245-014-249-034")
+    print("Input Password")
+    pas = input()
+    while pas != compcode:
+        print("try again")
+    else:
+        print("Correct")
     
 def main():
     location = 200
@@ -83,16 +115,5 @@ def main():
             print("there is an item here:" + itemArray[location])
             pickUpItem()
    
-def hack():
-    compcode = "raddoc2020"
-    print("find the computer password")
-    print("rldk-akjg-dnjj")
-    print("dmf-ocn-cmf")
-    print("245-014-249-034")
-    print("Input Password")
-    pas = input()
-    while pas != compcode:
-        print("try again")
-    else:
-        print("Correct")
+
             
