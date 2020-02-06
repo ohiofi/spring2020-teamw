@@ -5,6 +5,38 @@ for i in range(999):
   roomArray.append(False)
   itemArray.append(False)
   
+
+
+roomArray[200] = "You are in the corner of a room with walls to the north and west of you. Further east in room is a chair, and to the south west there is a tiny window"
+roomArray[400] = "you are near a chair and the walls of the room are to the north and east of you. You can see a tiny window to the south west and a door to the far south"
+roomArray[301]= "there is a tiny window letting very little light in and there is door to the far east"
+roomArray[300] = "there is a wall to the north of you. There is alos a chair the the west, a vhair to the east and a tiny window to the south"
+roomArray[201]= "there is walls to both the west and east of you. There is nothing but a tiny window to the east and a bed to the north in this room."
+roomArray[401]= "there is a door directly to the east to leave this room. There is also a chair to the north and a tiny window to the west."
+roomArray[403] = "you are in the hallway there is a medical cart in front of you. to the east is the main lobby"
+roomArray[501] = "you are now in the main lobby. to the west is your room, you can go east or south"
+roomArray[502] = "you're in the middle of the lobby. you can move north, east, and south"
+roomArray[503] = "you are in the southern most part of the lobby. you can move west, east, or north"
+roomArray[601] = "you are in the corner of the room. you can move west, or south"
+roomArray[602] = "you are at the main desk. you can move north, west, and south"
+roomArray[603] = "you are in the southeast corner. you can move west or north"
+roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
+roomArray[203] = "there are walls to the north and west of you. To the south there is a long hallway and to the east ther is some medical supplies"
+roomArray[303] = "Your in anemptry room with walls north and south of you"
+roomArray[204] = "You are in an empty hallway. You may only move north and south."
+roomArray[205]= "You are in an empty hallway. There is a blood blank east of you. You may not move west."
+roomArray[305] = "You are in a room with a blood bank. There is a special room east of you if you willing to take up the challenge"
+roomArray[306]= "Your in an empty room. There is a wall south of you."
+roomArray[406]= "You are in a room with many beds around you. You may not move south."
+roomArray[506] = "You may only move west. Room north of you may only be entered with the key code."
+
+itemArray[201] = "Pill bottle"
+itemArray[300] = "Phone"
+itemArray[400] = "coins"
+itemArray[602] = "Keycard"
+itemArray[403] = "Syringe"
+itemArray[603] = "Battery"
+
 def highLow():
   color = ["blue", "green", "purple", "Teal", "yellow", "red", "gray", "black"]
   veggies = ["cabage","garlic", "cucumber", "patato", "lettuce", "avacodo", "leek", "carrot", "taro", "ginger"]
@@ -23,39 +55,8 @@ def highLow():
         print("The secret word is before " + str(guess)) 
     if guess == theWord:
         print("You got it!!!!!")
-        print("there are walls to the north and west of you. To the south there is a long hallway and to the east ther is some medical supplies")
+        highLow = True 
         return
-
-roomArray[200] = "You are in the corner of a room with walls to the north and west of you. Further east in room is a chair, and to the south west there is a tiny window"
-roomArray[400] = "you are near a chair and the walls of the room are to the north and east of you. You can see a tiny window to the south west and a door to the far south"
-roomArray[301]= "there is a tiny window letting very little light in and there is door to the far east"
-roomArray[300] = "there is a wall to the north of you. There is alos a chair the the west, a vhair to the east and a tiny window to the south"
-roomArray[201]= "there is walls to both the west and east of you. There is nothing but a tiny window to the east and a bed to the north in this room."
-roomArray[401]= "there is a door directly to the east to leave this room. There is also a chair to the north and a tiny window to the west."
-roomArray[403] = "you are in the hallway there is a medical cart in front of you. to the east is the main lobby"
-roomArray[501] = "you are now in the main lobby. to the west is your room, you can go east or south"
-roomArray[502] = "you're in the middle of the lobby. you can move north, east, and south"
-roomArray[503] = "you are in the southern most part of the lobby. you can move west, east, or north"
-roomArray[601] = "you are in the corner of the room. you can move west, or south"
-roomArray[602] = "you are at the main desk. you can move north, west, and south"
-roomArray[603] = "you are in the southeast corner. you can move west or north"
-roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
-roomArray[203] = "time to play a game" + highLow() 
-roomArray[303] = "Your in anemptry room with walls north and south of you"
-roomArray[204] = "You are in an empty hallway. You may only move north and south."
-roomArray[205]= "You are in an empty hallway. There is a blood blank east of you. You may not move west."
-roomArray[305] = "You are in a room with a blood bank. There is a special room east of you if you willing to take up the challenge"
-roomArray[306]= "Your in an empty room. There is a wall south of you."
-roomArray[406]= "You are in a room with many beds around you. You may not move south."
-roomArray[506] = "You may only move west. Room north of you may only be entered with the key code."
-
-itemArray[201] = "Pill bottle"
-itemArray[300] = "Phone"
-itemArray[400] = "coins"
-itemArray[602] = "Keycard"
-itemArray[403] = "Syringe"
-itemArray[603] = "Battery"
-
 
 
 def move(userInput, location):
