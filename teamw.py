@@ -47,6 +47,7 @@ roomArray[305] = "You are in a room with a blood bank. There is a special room e
 roomArray[306]= "Your in an empty room. There is a wall south of you."
 roomArray[406]= "You are in a room with many beds around you. You may not move south."
 roomArray[506] = "You may only move west. Room north of you may only be entered with the key code."
+roomArray[206] = bossBattle()
 
 itemArray[201] = "Pill bottle"
 itemArray[300] = "Phone"
