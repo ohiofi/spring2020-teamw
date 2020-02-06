@@ -4,6 +4,26 @@ import time
 for i in range(999):
   roomArray.append(False)
   itemArray.append(False)
+  
+def highLow():
+  color = ["blue", "green", "purple", "Teal", "yellow", "red", "gray", "black"]
+  veggies = ["cabage","garlic", "cucumber", "patato", "lettuce", "avacodo", "leek", "carrot", "taro", "ginger"]
+  desserts = ["fudge", "cake", "cupcake", "pastery", "danish", "sundae", "cookie", "tart", "chocolate", "brownie"]
+  combinedList = color + veggies + desserts
+  theWord = combinedList 
+  theWord = theWord.lower()
+  print("I'm thinking of a secret word. Take a guess and I'll tell you if the secret word is before your word or after your word.")
+  while True:
+    print("guess a word")
+    guess = input()
+    guess = guess.lower()
+    if guess < theWord:
+        print("The secret word is after " + str(guess))
+    if guess > theWord:
+        print("The secret word is before " + str(guess)) 
+    if guess == theWord:
+        print("You got it!!!!!")
+        return
 
 roomArray[200] = "You are in the corner of a room with walls to the north and west of you. Further east in room is a chair, and to the south west there is a tiny window"
 roomArray[400] = "you are near a chair and the walls of the room are to the north and east of you. You can see a tiny window to the south west and a door to the far south"
@@ -18,6 +38,8 @@ roomArray[503] = "you are in the southern most part of the lobby. you can move w
 roomArray[601] = "you are in the corner of the room. you can move west, or south"
 roomArray[602] = "you are at the main desk. you can move north, west, and south"
 roomArray[603] = "you are in the southeast corner. you can move west or north"
+roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
+roomArray[203] = highLow() 
 
 itemArray[201] = "Pill bottle"
 itemArray[300] = "Phone"
@@ -53,21 +75,18 @@ def doesRoomExist(roomNumber):
     except:
         print ("You can't go there")
         return False
-    
-def main():
-    location = 200
-    print("Hospital Escape")
-    print("by: Christian, Megan, Abood")
-    print("You have just gotton in a car crash and when you wake up in the hospital, but there is no elese there.")
-    time.sleep(1)
-    while True:
-        print(roomArray[location])
-        print("please type: n, s, e, w, or quit")
-        userinput = input()
-        location =  move(userinput, location)
-        if itemArray[location]:
-            print("there is an item here:" + itemArray[location])
-            
+      
+def pickUpItem(location):
+  print("would you like to pick it up? type y or n")
+  userinput = input()
+  if userinput.lower() == "y":
+    itemArray[location] = False
+    yourItems.append(itemArray[location])
+    print("Item Has been picked up")
+    return 
+  else:
+    return
+  
 def randomHealth(): #bossbattle
     return randint(30,50)
 
@@ -138,3 +157,32 @@ def bossBattle(): #bossbattle
       print("You have " + str(playerHealth) + " remaining")
       time.sleep(1)
   whoWins(playerHealth, bossHealth)
+
+def hack():
+    compcode = "raddoc2020"
+    print("find the computer password")
+    print("rldk-akjg-dnjj")
+    print("dmf-ocn-cmf")
+    print("245-014-249-034")
+    print("Input Password")
+    pas = input()
+    while pas != compcode:
+        print("try again")
+    else:
+        print("Correct")
+    
+def main():
+    location = 200
+    print("Hospital Escape")
+    print("by: Christian, Megan, Abood")
+    print("You have just gotton in a car crash and when you wake up in the hospital, but there is no elese there.")
+    time.sleep(1)
+    while True:
+        print(roomArray[location])
+        print("please type: n, s, e, w, or quit")
+        userinput = input()
+        location =  move(userinput, location)
+        if itemArray[location] != False:
+            print("there is an item here:" + itemArray[location])
+            pickUpItem()
+
