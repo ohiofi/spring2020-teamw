@@ -40,6 +40,13 @@ roomArray[602] = "you are at the main desk. you can move north, west, and south"
 roomArray[603] = "you are in the southeast corner. you can move west or north"
 roomArray[405] = "you have found a computer that can be hacked for more hospital information. type 'Hack' to attempt to hack the computer.. you can move west or south"
 roomArray[203] = highLow() 
+roomArray[303] = "Your in anemptry room with walls north and south of you"
+roomArray[204] = "You are in an empty hallway. You may only move north and south."
+roomArray[205]= "You are in an empty hallway. There is a blood blank east of you. You may not move west."
+roomArray[305] = "You are in a room with a blood bank. There is a special room east of you if you willing to take up the challenge"
+roomArray[306]= "Your in an empty room. There is a wall south of you."
+roomArray[406]= "You are in a room with many beds around you. You may not move south."
+roomArray[506] = "You may only move west. Room north of you may only be entered with the key code."
 
 itemArray[201] = "Pill bottle"
 itemArray[300] = "Phone"
