@@ -1,5 +1,6 @@
 roomArray = []
 itemArray = []
+yourItems = []
 import time
 hackcomplete = False
 highlow = False
@@ -40,7 +41,7 @@ itemArray[602] = "Keycard"
 itemArray[403] = "Syringe"
 itemArray[603] = "Battery"
 
-def specialrooms():
+def specialrooms(location):
     if location == 405 and hackcomplete == False:
         hack()
     if location == 203 and highlow == False:
@@ -76,7 +77,7 @@ def move(userInput, location):
     location = location - 1
   else:
     if str(userInput) == "s" and doesRoomExist(location + 1):
-      location = loaction + 1
+      location = location + 1
     else:
       if str(userInput) == "e" and doesRoomExist(location + 100):
         location = location + 100
@@ -199,12 +200,13 @@ def main():
     print("by: Christian, Megan, Abood")
     print("You have just gotton in a car crash and when you wake up in the hospital, but there is no elese there.")
     time.sleep(1)
-    while True:
+    while True: 
+        specialrooms(location)
         print(roomArray[location])
         print("please type: n, s, e, w, or quit")
         userinput = input()
         location =  move(userinput, location)
         if itemArray[location] != False:
             print("there is an item here:" + itemArray[location])
-            pickUpItem()
+            pickUpItem(location)
 
