@@ -28,11 +28,12 @@ roomArray[405] = "you have found a computer that can be hacked for more hospital
 roomArray[203] = "there are walls to the north and west of you. To the south there is a long hallway and to the east ther is some medical supplies"
 roomArray[303] = "Your in anemptry room with walls north and south of you"
 roomArray[204] = "You are in an empty hallway. You may only move north and south."
-roomArray[205]= "You are in an empty hallway. There is a blood blank east of you. You may not move west."
 roomArray[305] = "You are in a room with a blood bank. There is a special room east of you if you willing to take up the challenge"
 roomArray[306]= "Your in an empty room. There is a wall south of you."
 roomArray[406]= "You are in a room with many beds around you. You may not move south."
 roomArray[506] = "You may only move west. Room north of you may only be entered with the key code."
+roomArray[206] = "there is a dragon you must defeat in order to pass"
+
 
 itemArray[201] = "Pill bottle"
 itemArray[300] = "Phone"
@@ -48,6 +49,13 @@ def specialrooms(location):
         highLow()
     if location == 206 and bossbattle == False:
         bossBattle()
+    if location == 205:
+        if keycard in itemArray:
+            location == True
+        else:
+            print("must need key to enter")
+
+    
     
 
 def highLow():
@@ -156,7 +164,6 @@ def whoWins(playerHealth, bossHealth): #bossbattle
 
 def bossBattle(): #bossbattle
   playerHealth = 50
-  print("there is a dragon you must defeat in order to pass")
   bossHealth = randomHealth()
   iceWeakness = randomTrueFalse()
   magicWeakness = randomTrueFalse()
@@ -179,6 +186,7 @@ def bossBattle(): #bossbattle
       print("You have " + str(playerHealth) + " remaining")
       time.sleep(1)
   whoWins(playerHealth, bossHealth)
+  bossbattle == True
 
 def hack():
     compcode = "raddoc2020"
