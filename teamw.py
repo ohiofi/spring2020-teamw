@@ -1,3 +1,5 @@
+import time
+from random import *
 print("██╗  ██╗ ██████╗ ███████╗██████╗ ██╗████████╗ █████╗ ██╗         ███████╗███████╗ ██████╗ █████╗ ██████╗ ██████╗")
 print("██║  ██║██╔═══██╗██╔════╝██╔══██╗██║╚══██╔══╝██╔══██╗██║         ██╔════╝██╔════╝██╔════╝██╔══██╗██╔══██╗██╔════╝")
 print("███████║██║   ██║███████╗██████╔╝██║   ██║   ███████║██║         █████╗  ███████╗██║     ███████║██████╔╝█████╗  ")
@@ -7,7 +9,7 @@ print("╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚═
 roomArray = []
 itemArray = []
 yourItems = []
-import time
+
 hackcomplete = False
 highlow = False
 bossbattle = False
@@ -69,7 +71,7 @@ def highLow():
   veggies = ["cabage","garlic", "cucumber", "patato", "lettuce", "avacodo", "leek", "carrot", "taro", "ginger"]
   desserts = ["fudge", "cake", "cupcake", "pastery", "danish", "sundae", "cookie", "tart", "chocolate", "brownie"]
   combinedList = color + veggies + desserts
-  theWord = combinedList 
+  theWord = choice(combinedList) 
   theWord = theWord.lower()
   print("I'm thinking of a secret word. Take a guess and I'll tell you if the secret word is before your word or after your word.")
   while True:
