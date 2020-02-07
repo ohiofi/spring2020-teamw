@@ -1,6 +1,9 @@
 roomArray = []
 itemArray = []
 import time
+hackcomplete = False
+highlow = False
+bossbattle = False
 for i in range(999):
   roomArray.append(False)
   itemArray.append(False)
@@ -36,6 +39,15 @@ itemArray[400] = "coins"
 itemArray[602] = "Keycard"
 itemArray[403] = "Syringe"
 itemArray[603] = "Battery"
+
+def specialrooms():
+    if location == 405 and hackcomplete == False:
+        hack()
+    if location == 203 and highlow == False:
+        highLow()
+    if location == 206 and bossbattle == False:
+        bossBattle()
+    
 
 def highLow():
   color = ["blue", "green", "purple", "Teal", "yellow", "red", "gray", "black"]
@@ -179,6 +191,7 @@ def hack():
         print("try again")
     else:
         print("Correct")
+        hackcomplete =True
     
 def main():
     location = 200
