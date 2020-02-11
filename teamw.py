@@ -1,3 +1,4 @@
+import map
 import time
 from random import *
 print("██╗  ██╗ ██████╗ ███████╗██████╗ ██╗████████╗ █████╗ ██╗         ███████╗███████╗ ██████╗ █████╗ ██████╗ ██████╗")
@@ -57,9 +58,9 @@ def specialrooms(location):
         highLow()
     if location == 206 and bossbattle == False:
         bossBattle()
-    if location == 205:
-        if keycard in itemArray:
-            location == True
+    if location == 204:
+        if "Keycard" in yourItems:
+            roomArray[205] = "You are in a room with many beds around you. You may not move south."
         else:
             print("must need key to enter")
 
@@ -118,10 +119,11 @@ def pickUpItem(location):
   print("would you like to pick it up? type y or n")
   userinput = input()
   if userinput.lower() == "y":
-    itemArray[location] = False
     yourItems.append(itemArray[location])
+    itemArray[location] = False
     print("Item Has been picked up")
-    return 
+    print (yourItems)
+    return
   else:
     return
   
@@ -211,12 +213,14 @@ def hack():
         hackcomplete =True
     
 def main():
+    map = Map()
     location = 200
     print("Hospital Escape")
     print("by: Christian, Megan, Abood")
     print("You have just gotton in a car crash and when you wake up in the hospital, but there is no elese there.")
     time.sleep(1)
-    while True: 
+    while True:
+        map.draw(roomArray,itemArray,location)
         specialrooms(location)
         print(roomArray[location])
         print("please type: n, s, e, w, or quit")
@@ -225,6 +229,7 @@ def main():
         if itemArray[location] != False:
             print("there is an item here:" + itemArray[location])
             pickUpItem(location)
+
             
 def map():
     class Map(Turtle):
